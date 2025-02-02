@@ -3,7 +3,7 @@
 
     // Define the root path
     define('ROOT_PATH', dirname(dirname(dirname(__FILE__))));
-    // require_once(ROOT_PATH . '/app/constants/UserConstants.php');
+    // require_once(ROOT_PATH . '/app/Constants/UserConstants.php');
     $public_paths = ['/admin/login', '/admin/register', '/'];
     $current_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 

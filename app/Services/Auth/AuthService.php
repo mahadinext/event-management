@@ -243,7 +243,18 @@ class AuthService extends Service {
     */
     public function setSecureSessionParams(): void 
     {
+        // Ensure no output has been sent
+        if (headers_sent()) {
+            return;
+        }
+
         try {
+            // If session is active, regenerate it
+            if (session_status() === PHP_SESSION_ACTIVE) {
+                session_regenerate_id(true);
+                return;
+            }
+
             $secure = isset($_SERVER['HTTPS']); // true if HTTPS
             $httponly = true;
             $samesite = 'Lax';
@@ -269,6 +280,11 @@ class AuthService extends Service {
     */
     public function setSecurityHeaders(): void 
     {
+        // Ensure no output has been sent
+        if (headers_sent()) {
+            return;
+        }
+
         try {
             header('X-Frame-Options: DENY');
             header('X-XSS-Protection: 1; mode=block');
@@ -577,15 +593,15 @@ class AuthService extends Service {
     public function handleSuccessfulLogin($user, $remember = false): bool 
     {
         try {
+            // Set secure parameters before any output
+            $this->setSecureSessionParams();
+            $this->setSecurityHeaders();
+
             // Clear session data
             $this->clearSessionData();
             
             // Regenerate session ID
             session_regenerate_id(true);
-            
-            // Set secure parameters
-            $this->setSecureSessionParams();
-            $this->setSecurityHeaders();
             
             // Set session data
             $_SESSION['user_id'] = $user['id'];

@@ -92,7 +92,7 @@ class Router {
                 // Run middleware
                 foreach ($route['middleware'] as $middleware) {
                     $middlewareClass = $middleware . 'Middleware';
-                    $middlewareFile = __DIR__ . "/../middleware/{$middlewareClass}.php";
+                    $middlewareFile = __DIR__ . "/../Middleware/{$middlewareClass}.php";
                     
                     if (file_exists($middlewareFile)) {
                         require_once($middlewareFile);
@@ -137,13 +137,13 @@ class Router {
         // Logger::debug("Current Path: " . $currentPath);
         
         if (strpos($currentPath, '/admin') === 0) {
-            $baseFolder = 'admin/';
+            $baseFolder = 'Admin/';
             $baseNamespace .= 'Admin\\';
         } else if (strpos($currentPath, '/attendee') === 0) {
-            $baseFolder = 'attendee/';
+            $baseFolder = 'Attendee/';
             $baseNamespace .= 'Attendee\\';
         } else if (strpos($currentPath, '/api') === 0) {
-            $baseFolder = 'api/';
+            $baseFolder = 'Api/';
             $baseNamespace .= 'Api\\';
         }
         
@@ -154,7 +154,7 @@ class Router {
         // $controllerPath = strtolower(preg_replace('/([a-z])([A-Z])/', '$1-$2', str_replace('Controller', '', $controller)));
         // For example: EventAttendeeController -> event/attendee/EventAttendeeController.php
         $controllerPath = preg_replace('/([a-z])([A-Z])/', '$1/$2', str_replace('Controller', '', $controller));
-        $controllerFile = __DIR__ . "/../controllers/{$baseFolder}{$controllerPath}/{$controller}.php";
+        $controllerFile = __DIR__ . "/../Controllers/{$baseFolder}{$controllerPath}/{$controller}.php";
 
         // Ensure we don't have double slashes
         $controllerPath = trim(str_replace('//', '/', $controllerPath), '/');

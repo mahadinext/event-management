@@ -1,6 +1,6 @@
 <?php
     define('ROOT_PATH', dirname(dirname(dirname(__FILE__))));
-    require_once(ROOT_PATH . '/app/constants/UserConstants.php');
+    require_once(ROOT_PATH . '/app/Constants/UserConstants.php');
 ?>
 
 <!DOCTYPE html>

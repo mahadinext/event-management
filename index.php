@@ -7,7 +7,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use App\Core\Logger;
 use App\Core\Router;
-use Exception;
+// use Exception;
 
 // Your routing code
 
@@ -18,7 +18,7 @@ Logger::init(__DIR__ . '/logs/site.log');
 session_start();
 
 // Require the router and other core files
-require_once(__DIR__ . '/app/core/Router.php');
+// require_once(__DIR__ . '/app/core/Router.php');
 
 // Create router instance
 $router = new Router();
