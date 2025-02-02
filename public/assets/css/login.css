@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('../images/night-sky.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #01710a;
+    box-shadow: 0 0 5px rgba(3, 233, 244, 0.3);
+}
+
+.form-group input::placeholder {
+    color: #777;
+}
+
+.form-group label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    padding: 0 5px;
+    font-size: 0.9rem;
+    color: #333;
+    background: white;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    color: #01710a;
+    font-size: 0.85rem;
+}
+
+button {
+    width: 100%;
+    padding: 10px 20px;
+    background: #01710a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1d8425;
+}
+
+.links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #01710a;
+}
+
+/* Add shooting stars styles */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: shoot 3s linear infinite;
+    box-shadow: 0 0 3px #fff;
+}
+
+.star:nth-child(1) { top: 20%; left: -10%; animation-delay: 0s; }
+.star:nth-child(2) { top: 40%; left: -10%; animation-delay: 0.6s; }
+.star:nth-child(3) { top: 60%; left: -10%; animation-delay: 1.2s; }
+.star:nth-child(4) { top: 80%; left: -10%; animation-delay: 1.8s; }
+.star:nth-child(5) { top: 50%; left: -10%; animation-delay: 2.4s; }
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(120vw) translateY(-120vh) rotate(-45deg);
+        opacity: 0;
+    }
+}

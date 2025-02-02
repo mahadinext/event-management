@@ -1,0 +1,101 @@
+.
+├── README.md
+├── app
+│   ├── Constants
+│   │   ├── EventConstants.php
+│   │   └── UserConstants.php
+│   ├── Controllers
+│   │   ├── Admin
+│   │   │   ├── Auth
+│   │   │   │   └── AuthController.php
+│   │   │   ├── Dashboard
+│   │   │   │   └── DashboardController.php
+│   │   │   └── Event
+│   │   │       ├── Attendee
+│   │   │       │   └── EventAttendeeController.php
+│   │   │       └── EventController.php
+│   │   ├── Api
+│   │   │   └── Events
+│   │   │       └── EventsController.php
+│   │   ├── Attendee
+│   │   │   └── Auth
+│   │   │       └── AuthController.php
+│   │   └── Event
+│   │       └── Dashboard
+│   │           └── EventDashboardController.php
+│   ├── Core
+│   │   ├── Controller.php
+│   │   ├── Logger.php
+│   │   ├── Router.php
+│   │   ├── Service.php
+│   │   └── View.php
+│   ├── Middleware
+│   │   ├── Auth.php
+│   │   ├── CsrfMiddleware.php
+│   │   └── StoreIntendedUrl.php
+│   ├── Models
+│   │   ├── Permission.php
+│   │   ├── Role.php
+│   │   └── User.php
+│   └── Services
+│       ├── AdminDashboardService.php
+│       ├── Auth
+│       │   └── AuthService.php
+│       ├── EventAttendeeService.php
+│       ├── EventDashboardService.php
+│       └── EventService.php
+├── composer.json
+├── composer.lock
+├── config
+│   └── database.php
+├── database
+│   └── event_management.sql
+├── index.php
+├── logs
+│   └── site.log
+├── project-structure.txt
+├── public
+│   └── assets
+│       ├── css
+│       │   ├── login.css
+│       │   └── styles.css
+│       ├── images
+│       │   └── night-sky.jpg
+│       └── js
+│           ├── login.js
+│           ├── main.js
+│           └── register.js
+├── routes
+│   └── web.php
+└── views
+    ├── auth
+    │   ├── admin
+    │   │   ├── login.php
+    │   │   └── register.php
+    │   └── attendee
+    │       ├── login.php
+    │       └── register.php
+    ├── dashboard.php
+    ├── errors
+    │   ├── 403.php
+    │   ├── 404.php
+    │   └── 500.php
+    ├── event-attendees
+    │   └── index.php
+    ├── event-dashboard
+    │   └── index.php
+    ├── events
+    │   ├── create.php
+    │   ├── edit.php
+    │   └── index.php
+    ├── includes
+    │   ├── footer.php
+    │   ├── head-css.php
+    │   ├── header.php
+    │   ├── navbar.php
+    │   ├── pagination.php
+    │   ├── sidebar.php
+    │   └── vendor-scripts.php
+    └── layouts
+        ├── master.php
+        └── public.php

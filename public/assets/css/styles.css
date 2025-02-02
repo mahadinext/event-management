@@ -1,0 +1,249 @@
+/* Main Layout */
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #343a40;
+    color: #fff;
+    transition: all 0.3s;
+
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar.active + #content {
+    width: 100%;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #2c3136;
+    text-align: center;
+}
+
+.sidebar-header .logo {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.sidebar-header h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li {
+    padding: 0;
+    position: relative;
+}
+
+#sidebar ul li a {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+#sidebar ul li a:hover {
+    background: #495057;
+}
+
+#sidebar ul li.active > a {
+    background: #495057;
+}
+
+/* Submenu styles */
+#sidebar ul ul {
+    background: #2c3136;
+}
+
+#sidebar ul ul li a {
+    padding-left: 40px;
+    font-size: 0.9em;
+}
+
+/* Content Area */
+#content {
+    /* width: calc(100% - 250px); */
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 250px;
+    transition: all 0.3s;
+}
+
+#content.active {
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#sidebarCollapse {
+    background: transparent;
+    border: none;
+}
+
+#sidebarCollapse:hover {
+    color: #0056b3;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Notification Styles */
+.notification-dropdown {
+    /* width: 300px; */
+    min-width: 300px;
+    padding: 0;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+    padding: 0.5rem;
+}
+
+.notification-item .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 10px; */
+    margin-right: 1rem;
+    color: white;
+}
+
+.notification-item .icon i {
+    color: white;
+}
+
+.notification-item .content {
+    flex: 1;
+}
+
+.notification-item .content p {
+    margin: 0;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.notification-item .content small {
+    color: #6c757d;
+}
+
+/* Profile dropdown specific styles */
+#profileDropdown {
+    cursor: pointer;
+}
+
+.dropdown-item {
+    /* padding: 8px 20px; */
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item i {
+    width: 20px;
+}
+
+/* Overlay for mobile */
+.content-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 999;
+    }
+    
+    #sidebar.active {
+        margin-left: 0;
+    }
+    
+    #content {
+        width: 100% !important;
+        margin-left: 0;
+    }
+    
+    #content.active {
+        margin-left: 250px;
+    }
+
+    .content-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 998;
+    }
+
+    .content-overlay.active {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .notification-dropdown {
+        width: 280px;
+    }
+}

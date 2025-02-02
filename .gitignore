@@ -1,0 +1,53 @@
+# Environment Configuration
+.env
+
+# Composer
+/vendor
+composer.lock
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.swp
+*.swo
+.DS_Store
+
+# Cache and temporary files
+*.cache
+*.tmp
+*.temp
+.php_cs.cache
+.phpunit.result.cache
+
+# Uploaded files and media
+public/uploads/
+public/media/
+
+# Node modules (if you use any JavaScript build tools)
+node_modules/
+package-lock.json
+
+# Build files
+/build/
+/dist/
+
+# Test coverage
+/coverage/
+
+# Local development specific
+.phpunit.cache/
+.php-cs-fixer.cache
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
